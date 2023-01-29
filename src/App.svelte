@@ -1,58 +1,80 @@
 <script>
+   import { blur } from 'svelte/transition';
+   import Router from 'svelte-spa-router';
+   import { routes } from './routes'
+
+   let menuOpen = false;
+
+   function handleClick() {
+      menuOpen = !menuOpen;
+  }
+
 </script>
 
-<main>
-    <header>
-      <p class="header-text">BHSMC</p>
-    </header>
-    <div class="main-container">
-      <p class="statement">Big Things Are Coming</p>
-      <p class="the-what">A place to share and discover new music<br>Learn about different genres<br>And more...</p>
-    </div>
-</main>
+<div>
+  <header>
+     <p class="header-text">BHSMC</p>
+     <button on:click={handleClick}>Menu</button>
+  </header>
+  {#if menuOpen}
+     <nav transition:blur={{duration: 200}}>
+      <a on:click={handleClick} href="/#/">Home</a>
+      <a on:click={handleClick} href="/#/explore">Explore</a>
+     </nav>
+  {/if}
+</div>
+<Router {routes} />
+
+
 
 <style>
-  main {
-    text-align: center;
-  }
-
   header {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
-    min-height: 3rem;
+     display: flex;
+     justify-content: space-between;
+     gap: 1rem;
+     min-height: 3rem;
   }
 
-  p {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  nav {
+   margin-top: .2rem;
+   width: 100%;
+   display: flex;
+   flex: 1;
+   justify-content: space-evenly;
+   position: absolute;
+   z-index: 2;
   }
 
-  .main-container {
-    display: flex;
-    min-height: calc(100vh - 3rem);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  a {
+   font-family: 'Unbounded', cursive;
+   text-decoration: none;
+   color: rgba(255, 255, 255, 0.87);
   }
 
-  .statement {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    font-size: 2rem;
-    line-height: 2.5rem;
+  button {
+     border: none;
+     background-color: transparent;
+     color: rgba(255, 255, 255, 0.87);
+     font-family: 'Unbounded', cursive;
+     font-size: 2rem;
+     padding: 0;
+     line-height: 2rem;
+     padding-top: 1rem;
+     padding-right: 3vw;
+     padding-bottom: 1rem;
   }
 
-  .the-what {
-    font-family: 'Roboto', sans-serif;
+  button:hover {
+     cursor: pointer;
   }
 
   .header-text {
-    font-family: 'Unbounded', cursive;
-    font-size: 2rem;
-    margin: 0;
-    padding-top: 1rem;
-    padding-left: 3vw;
+     font-family: 'Unbounded', cursive;
+     font-size: 2rem;
+     line-height: 2rem;
+     margin: 0;
+     padding-top: 1rem;
+     padding-bottom: 1rem;
+     padding-left: 3vw;
   }
-
 </style>

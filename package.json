@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "start": "sirv public -s",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,6 +15,7 @@
     "vite": "^4.0.0"
   },
   "dependencies": {
-    "firebase": "^9.15.0"
+    "firebase": "^9.15.0",
+    "svelte-spa-router": "^3.3.0"
   }
 }
