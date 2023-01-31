@@ -1,5 +1,4 @@
 <script>
-   import { blur } from 'svelte/transition';
    import Router from 'svelte-spa-router';
    import { routes } from './routes'
 
@@ -17,7 +16,7 @@
      <button on:click={handleClick}>Menu</button>
   </header>
   {#if menuOpen}
-     <nav transition:blur={{duration: 200}}>
+     <nav>
       <a on:click={handleClick} href="/#/">Home</a>
       <a on:click={handleClick} href="/#/explore">Explore</a>
      </nav>

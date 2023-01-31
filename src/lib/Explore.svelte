@@ -70,9 +70,10 @@
 </script>
 
 <div>
-   <h1 class="page-header">EXPLORE</h1>
+   <h1>EXPLORE</h1>
    <p class="subtitle">Find New Music Suggested by BHS Students</p>
    <div class="main-container">
+      <a href="/#/add">Add Your Own Music Here</a>
       <div class="selector-container">
          <button id="artists" class="unselected-option" on:click={artistsClick}>Artists</button>
          <button id="songs" class="unselected-option" on:click={songsClick}>Songs</button>
@@ -126,13 +127,20 @@
 
    button {
       font-family: 'Montserrat', sans-serif;
+      color: rgba(255, 255, 255, 0.87);
    }
 
    button:hover {
       cursor: pointer;
    }
 
-   .page-header {
+   a {
+      font-family: 'Roboto', sans-serif;
+      color:rgba(255, 255, 255, 0.87);
+      margin-bottom: 1rem;
+   }
+
+   h1 {
       font-family: 'Montserrat', sans-serif;
       text-align: center;
       font-size: 3rem;
@@ -141,8 +149,8 @@
 
    .subtitle {
       margin-top: 3rem;
-      margin-bottom: 2rem;
       text-align: center;
+      margin-bottom: .5rem;
    }
 
    .selector-container {
