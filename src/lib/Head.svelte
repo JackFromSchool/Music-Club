@@ -3,8 +3,8 @@
 
 <main>
     <div class="main-container">
-      <p class="statement">Big Things Are Coming</p>
-      <p class="the-what">A place to share and discover new music<br>Learn about different genres<br>And more...</p>
+      <p class="statement">Bridgeland Music Club</p>
+      <p class="the-what">A Home for all Things Music</p>
     </div>
 </main>
 
